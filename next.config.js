@@ -54,7 +54,6 @@ const nextConfig = {
           'components',
           'components/forms',
           'components/layouts',
-          'components/modals',
           'components/shared',
           'components/views',
           'constants',
