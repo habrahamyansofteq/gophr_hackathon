@@ -1,0 +1,96 @@
+@mixin breakpoint($devices) {
+  @if $devices == mobile {
+    @media (max-width: $mobile-m) {
+      @content;
+    }
+  } @else if $devices == tablet-l {
+    @media (max-width: $tablet-l) {
+      @content;
+    }
+  } @else if $devices == tablet-m {
+    @media (max-width: $tablet-m) {
+      @content;
+    }
+  } @else if $devices == tablet {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  } @else if $devices == desktop {
+    @media (max-width: $desktop) {
+      @content;
+    }
+  } @else if $devices == wide {
+    @media (max-width: $wide) {
+      @content;
+    }
+  } @else if $devices == wide-l {
+    @media (max-width: $wide-l) {
+      @content;
+    }
+  }
+}
+
+@mixin button($padding) {
+  @extend %heading-bold-16;
+  @extend %flex-center;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding: $padding;
+  color: $white;
+  background-color: $primary-1;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-1;
+    box-shadow: $button-hover;
+
+    @include breakpoint(desktop) {
+      background-color: $primary-1;
+      box-shadow: unset;
+    }
+
+    @include breakpoint(tablet-m) {
+      background-color: $primary-1;
+    }
+  }
+
+  &:disabled {
+    background-color: $neutra-3;
+    border: 1px solid $neutra-5;
+    cursor: default;
+    color: $rgba-25;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &:focus {
+    background-color: $primary-1;
+  }
+}
+
+@mixin textarea($padding, $height) {
+  padding: $padding;
+  resize: none;
+  height: $height;
+  color: $rgba-85;
+  border-radius: 4px;
+  width: 100%;
+  border: 1px solid $neutra-5;
+}
+
+@mixin input($padding) {
+  border: 1px solid $neutra-5;
+  background-color: $white;
+  color: $rgba-65;
+  border-radius: 2px;
+  padding: $padding;
+
+  &:disabled {
+    background-color: $neutra-3;
+    color: $rgba-25;
+  }
+}

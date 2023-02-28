@@ -1,0 +1,52 @@
+.imageDropPlacement {
+  background-color: #c6d4ed;
+  border-width: 1px;
+  width: 410px;
+  max-width: 100%;
+  height: 260px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  margin-left: 16px;
+  border-style: dashed;
+  border-color: #4da0ff;
+  margin-top: 16px;
+  @media (max-width: 1024px) {
+    width: 290px;
+    height: 200px;
+  }
+}
+
+.imageWrapper {
+  background: rgba(52, 106, 207, 0.2);
+  border-radius: 7px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(52, 106, 207, 0.3);
+  margin: 16px;
+  padding: 20px;
+
+  img {
+    border-radius: 7px;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  .button {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    background-color: #3865b3;
+    margin-top: 4px;
+    border-radius: 3.5px;
+    padding: 5px 15px;
+    cursor: pointer;
+  }
+}

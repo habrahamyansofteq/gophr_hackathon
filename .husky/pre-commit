@@ -1,0 +1,20 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🏗️👷 Styling and testing your project before committing'
+
+yarn check-lint ||
+(
+        echo 'Get that weak s**t out of here!
+                ESLint Check Failed. Make the required changes listed above, add changes and try to commit again.'
+        false;
+)
+
+yarn check-types ||
+(
+    echo '❌❌❌ Failed Type check. ❌❌❌
+            Are you seriously trying to write that? Make the changes required above.'
+    false;
+)
+
+echo '✅✅✅✅ You win this time... I am starting to commit this now. ✅✅✅✅'

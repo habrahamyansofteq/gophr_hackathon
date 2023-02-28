@@ -1,0 +1,19 @@
+.wrapper {
+  @extend %flex-column;
+  gap: 14px;
+
+  &__input {
+    @include input(6px 12px);
+  }
+
+  &__forgot_password {
+    @extend %link;
+    @extend %body-regular-14;
+    color: $secondary-1;
+    margin: 4px 0;
+  }
+
+  &__submit {
+    @include button(5px 16px);
+  }
+}

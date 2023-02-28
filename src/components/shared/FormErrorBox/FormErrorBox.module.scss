@@ -1,0 +1,12 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  background: $danger-1;
+  border: 1px solid $danger-1;
+  padding: 16px 20px;
+  word-break: break-word;
+
+  &__icon {
+    margin: auto 0;
+  }
+}

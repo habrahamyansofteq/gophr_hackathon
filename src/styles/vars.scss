@@ -1,0 +1,165 @@
+// media queries vars
+$mobile-m: 320px;
+$tablet-m: 576px;
+$tablet: 768px;
+$tablet-l: 992px;
+$desktop: 1024px;
+$wide: 1200px;
+$wide-l: 1440px;
+
+// @extend
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+%flex-align {
+  display: flex;
+  align-items: center;
+}
+
+%paginationItem {
+  margin: 0 4px;
+  padding: 1px 7px;
+  border-radius: 32px;
+  background-color: $white;
+  border: 1px solid $neutra-5;
+}
+
+%authFormCard {
+  width: 100%;
+  max-width: 392px;
+  border-radius: 8px;
+  padding: 48px 64px;
+  box-shadow: $card-hover;
+  background-color: $white;
+}
+
+%fbAndGoogleCard {
+  width: 100%;
+  max-width: 124px;
+  border-radius: 4px;
+  color: $secondary-1;
+  color: $secondary-1;
+  @extend %flex-center;
+  @extend %body-medium-14;
+  background-color: $white;
+  line-height: 21px !important;
+  border: 1px solid $secondary-1;
+}
+
+%stock {
+  top: 11px;
+  left: 16px;
+  z-index: 3;
+  width: 100%;
+  max-width: 110px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  position: absolute;
+  font-weight: bold;
+  color: $danger-1;
+  background: $danger-1;
+  @extend %flex-center;
+  @extend %body-12;
+}
+
+%new {
+  top: 0;
+  z-index: 3;
+  right: 16px;
+  width: 60px;
+  min-height: 60px;
+  color: $danger-1;
+  position: absolute;
+  border-radius: 50%;
+  text-align: center;
+  background: $danger-1;
+  @extend %flex-center;
+  @extend %body-medium-14;
+}
+
+// variable width
+%headerItem {
+  color: $secondary-1;
+
+  &:hover {
+    color: $secondary-1;
+  }
+}
+
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-column-center {
+  @extend %flex-column;
+  justify-content: center;
+}
+
+%flex-column-between {
+  @extend %flex-column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// steps style
+%stepItem {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid $secondary-1;
+}
+
+%skeleton-animation {
+  animation: skeleton 3s infinite;
+
+  @keyframes skeleton {
+    0% {
+      background-color: $white;
+    }
+    25% {
+      background-color: $white-100;
+    }
+    50% {
+      background-color: $white;
+    }
+    75% {
+      background-color: $white-100;
+    }
+    100% {
+      background-color: $white;
+    }
+  }
+}
+
+%section-wrapper {
+  min-height: calc(100vh - 302px);
+}
+
+%custom-scroll {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary-1-rgba;
+    border-radius: 8px;
+  }
+}
+
+%link {
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
