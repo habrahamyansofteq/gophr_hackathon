@@ -1,8 +1,10 @@
 import DeleteIcon from '@mui/icons-material/Delete';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import React from 'react';
+import axios from 'axios';
+import {useState} from 'react';
 import ImageUploading, {ImageListType} from 'react-images-uploading';
+import {v4 as uuidv4} from 'uuid';
 
 import {Button, Typography} from '~/components';
 import {useWindowDimensions} from '~/hooks';
@@ -10,7 +12,7 @@ import {useWindowDimensions} from '~/hooks';
 import styles from './PhotoUpload.module.scss';
 
 const PhotoUpload = () => {
-  const [images, setImages] = React.useState([]);
+  const [images, setImages] = useState<ImageListType | []>([]);
   const {width} = useWindowDimensions();
 
   // 1024 is the default width of usual desktop
@@ -18,8 +20,21 @@ const PhotoUpload = () => {
 
   const onChange = (imageList: ImageListType, addUpdateIndex: number[] | undefined) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
-    setImages(imageList as never[]);
+    setImages(imageList);
+  };
+
+  console.log(images, 'images');
+
+  const submitHandler = async () => {
+    const data = await axios.post(
+      `https://us-central1-gophr-hackathon.cloudfunctions.net/signed-url`,
+      {
+        body: uuidv4(),
+      },
+    );
+    // {headers: {'Content-Type': 'image/jpeg'}},
+    //
+    console.log(data, 'DKJHGFGHJK');
   };
 
   const uploadText = isDesktop
@@ -27,7 +42,7 @@ const PhotoUpload = () => {
     : 'Press Here to upload an image';
 
   return (
-    <div>
+    <div className={styles.container}>
       <ImageUploading multiple={false} value={images} onChange={onChange} maxNumber={1}>
         {({imageList, onImageUpload, onImageUpdate, onImageRemove, isDragging, dragProps}): any => (
           <>
@@ -67,9 +82,11 @@ const PhotoUpload = () => {
         )}
       </ImageUploading>
       {images.length ? (
-        <>
-          <Button>Guess me</Button>
-        </>
+        <div className={styles.contentWrapper}>
+          <Button color="#3865b3" paddingString="15px" onClick={submitHandler}>
+            <p className={styles.uploadButtonText}>Submit</p>
+          </Button>
+        </div>
       ) : null}
     </div>
   );

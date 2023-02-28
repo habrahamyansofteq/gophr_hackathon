@@ -4,13 +4,13 @@ import React from 'react';
 const BoilerplateDocument: React.FC = () => (
   <Html lang="en">
     <Head>
-      <meta name="author" content="Boilerplate" />
+      <meta name="author" content="gophr_hackathon" />
       <meta name="theme-color" content="#bf9425" />
       <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="application-name" content="Boilerplate" />
+      <meta name="application-name" content="gophr_hackathon" />
       <meta name="format-detection" content="telephone=no" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-title" content="Boilerplate" />
+      <meta name="apple-mobile-web-app-title" content="gophr_hackathon" />
       <meta name="msapplication-navbutton-color" content="#bf9425" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 

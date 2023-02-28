@@ -1,3 +1,7 @@
+.container {
+  margin-left: 16px;
+}
+
 .imageDropPlacement {
   background-color: #c6d4ed;
   border-width: 1px;
@@ -9,7 +13,6 @@
   justify-content: center;
   align-items: center;
   border-radius: 7px;
-  margin-left: 16px;
   border-style: dashed;
   border-color: #4da0ff;
   margin-top: 16px;
@@ -26,7 +29,7 @@
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(52, 106, 207, 0.3);
-  margin: 16px;
+  margin: 16px 0;
   padding: 20px;
 
   img {
@@ -38,7 +41,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   .button {
     display: flex;
     align-items: center;
@@ -49,4 +52,13 @@
     padding: 5px 15px;
     cursor: pointer;
   }
+}
+.contentWrapper {
+  width: 100%;
+  button {
+    width: 100%;
+  }
+}
+.uploadButtonText {
+  font-weight: 500;
 }
