@@ -28,13 +28,11 @@ const PhotoUpload = () => {
   const submitHandler = async () => {
     const data = await axios.post(
       `https://us-central1-gophr-hackathon.cloudfunctions.net/signed-url`,
-      {
-        body: uuidv4(),
-      },
+      uuidv4(),
     );
     // {headers: {'Content-Type': 'image/jpeg'}},
     //
-    console.log(data, 'DKJHGFGHJK');
+    console.log(data, 'DKJHGFGHJKDKJHGFGHJKDKJHGFGHJKDKJHGFGHJK');
   };
 
   const uploadText = isDesktop
