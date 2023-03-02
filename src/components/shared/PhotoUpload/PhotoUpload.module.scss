@@ -55,10 +55,21 @@
 }
 .contentWrapper {
   width: 100%;
+  span {
+    display: flex;
+    justify-content: center;
+  }
+
   button {
     width: 100%;
   }
 }
 .uploadButtonText {
   font-weight: 500;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }

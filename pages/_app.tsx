@@ -1,5 +1,6 @@
 import '~/styles/index.scss';
 
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import type {AppProps} from 'next/app';
 import Head from 'next/head';
 import React from 'react';
@@ -7,10 +8,11 @@ import {Provider} from 'react-redux';
 
 import {useSystemTheme} from '~/hooks';
 import store from '~/redux/store';
-
 interface AppPropsMadeUp extends AppProps {
   Component: React.FC;
 }
+
+const queryClient = new QueryClient();
 
 const Boilerplate: React.FC<AppPropsMadeUp> = ({Component, pageProps}) => {
   const systemTheme = useSystemTheme();
@@ -18,13 +20,15 @@ const Boilerplate: React.FC<AppPropsMadeUp> = ({Component, pageProps}) => {
   const faviconHref = `/favicon/favicon-${systemTheme}.ico`;
 
   return (
-    <Provider store={store}>
-      <Head>
-        <title>Here should be your title for meta</title>
-        <link rel="shortcut icon" href={faviconHref} />
-      </Head>
-      <Component {...pageProps} />
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <Head>
+          <title>Here should be your title for meta</title>
+          <link rel="shortcut icon" href={faviconHref} />
+        </Head>
+        <Component {...pageProps} />
+      </Provider>
+    </QueryClientProvider>
   );
 };
 

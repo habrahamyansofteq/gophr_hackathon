@@ -24,7 +24,6 @@ const SignInForm: React.FC = () => {
     // const response = await your action here;
     // TODO: the comment is a simple example of the payload which will be returned when user submits this form
     // eslint-disable-next-line no-console
-    console.log(payload, 'Log in payload');
     toggleLoading();
   };
 

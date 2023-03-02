@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  margin-top: 20px;
+}
+
+.item {
+  background-color: #c6d4ed;
+
+  border-radius: 7px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border: 1px solid #4da0ff;
+  width: 410px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin-top: 5px;
+  @media (max-width: 1024px) {
+    width: 290px;
+  }
+}
