@@ -13,7 +13,7 @@ const HomeContainer: React.FC = () => {
     isLoading: imageLoading,
     mutateAsync,
     isSuccess: successfullyPublished,
-  } = useCloudDetector(images?.[0]?.dataURL);
+  } = useCloudDetector(images?.[0]);
 
   useEffect(() => {
     if (successfullyPublished) {

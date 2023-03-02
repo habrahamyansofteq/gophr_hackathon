@@ -4,25 +4,24 @@ import {useState} from 'react';
 
 const useCloudDetector = (image: any) => {
   const [shouldRemove, setShouldRemove] = useState(false);
+
   const uploadImage = async () => {
-    // const formData = new FormData();
-    // formData.append('image', image);
     try {
+      const response = await axios.get(image?.dataURL, {responseType: 'blob'});
+
       await axios.post(
         `https://us-central1-gophr-hackathon.cloudfunctions.net/file-upload`,
-        image,
+        response.data,
         {
           headers: {
-            'Content-Type': 'multipart/form-data',
+            'Content-Type': image.file.type,
           },
         },
       );
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.error('Error uploading image:', error);
     }
   };
-
-  // const { mutateAsync: uploadImage } = useMutation<TContact, Error, { userId: TUser['id']; profileId: TProfile['id'] }>(
 
   const {mutateAsync, isLoading, isSuccess} = useMutation(
     ['uploadImage'],
